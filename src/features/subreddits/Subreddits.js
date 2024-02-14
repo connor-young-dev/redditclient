@@ -1,6 +1,8 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchSubreddits, setSelectedSubreddit} from "./subRedditsSlice";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function Subreddits() {
     const dispatch = useDispatch();
@@ -15,7 +17,16 @@ function Subreddits() {
     const error = useSelector((state) => state.subreddits.error);
 
     if (isLoading) {
-        return 'loading...'
+        return (
+            <>
+                <h2>Subreddits</h2>
+                <ul id="subreddits" className="nav flex-column">
+                    <li>
+                        <Skeleton count={5} /> {/* Render 3 skeleton lines */}
+                    </li>
+                </ul>
+            </>
+        )
     }
 
     if (error) {
