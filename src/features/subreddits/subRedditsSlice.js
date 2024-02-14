@@ -4,6 +4,7 @@ import { API_ROOT } from "../../api/redditAPI";
 
 const initialState = {
     subreddits: [],
+    selectedSubreddit: '/r/Home/',
     isLoading: false,
     error: null
 }
@@ -21,7 +22,11 @@ export const fetchSubreddits = createAsyncThunk(
 const subRedditsSlice = createSlice({
     name: "subreddits",
     initialState,
-    reducers: {},
+    reducers: {
+        setSelectedSubreddit (state, action) {
+            state.selectedSubreddit = action.payload;
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchSubreddits.pending, (state) => {
             state.isLoading = true;
@@ -38,3 +43,4 @@ const subRedditsSlice = createSlice({
 });
 
 export default subRedditsSlice.reducer;
+export const {setSelectedSubreddit} = subRedditsSlice.actions;
