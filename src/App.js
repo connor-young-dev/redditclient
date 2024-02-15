@@ -10,7 +10,7 @@ function App() {
             <header className="g-col-12">
                 <Header />
             </header>
-            <div className="container grid">
+            <div className="mt-4 container grid">
                 <main className="g-col-8">
                     <Posts />
                 </main>

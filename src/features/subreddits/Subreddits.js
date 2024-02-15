@@ -22,7 +22,7 @@ function Subreddits() {
                 <h2>Subreddits</h2>
                 <ul id="subreddits" className="nav flex-column">
                     <li>
-                        <Skeleton count={5} /> {/* Render 3 skeleton lines */}
+                        <Skeleton count={5} />
                     </li>
                 </ul>
             </>

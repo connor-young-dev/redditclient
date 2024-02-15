@@ -10,7 +10,7 @@ const initialState = {
 }
 
 export const fetchSubreddits = createAsyncThunk(
-  'content/fetchSubreddits',
+  'subreddits/fetchSubreddits',
     async () => {
         const response = await fetch(`${API_ROOT}/subreddits.json`);
         const json = await response.json();
