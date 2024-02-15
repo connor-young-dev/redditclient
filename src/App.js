@@ -11,10 +11,10 @@ function App() {
                 <Header />
             </header>
             <div className="mt-4 container grid">
-                <main className="g-col-8">
+                <main className="g-col-12 g-col-md-8">
                     <Posts />
                 </main>
-                <aside className="g-col-4">
+                <aside className="g-col-12 g-col-md-4">
                     <Subreddits />
                 </aside>
             </div>

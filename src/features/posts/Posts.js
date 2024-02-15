@@ -1,13 +1,13 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchPosts} from "./postsSlice";
+import {fetchPosts, selectFilteredPosts} from "./postsSlice";
 import Post from "../../components/Post";
 import PostPlaceholder from "../../components/PostPlaceholder";
 
 function Posts() {
     const dispatch = useDispatch();
     const selectedSubreddit = useSelector((state) => state.subreddits.selectedSubreddit);
-    const posts = useSelector((state) => state.posts.posts);
+    const posts = useSelector(selectFilteredPosts);
     const isLoading = useSelector((state) => state.posts.isLoading);
     const error = useSelector((state) => state.posts.error);
 
